@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShipWheelIcon } from "lucide-react";
+import { Globe, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
 import useSignUp from "../hooks/useSignUp";
@@ -32,17 +32,22 @@ const SignUpPage = () => {
 
   return (
     <div
-      className="h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
+      className="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8 bg-gradient-to-br from-base-200 via-base-100 to-base-200"
       data-theme="forest"
     >
-      <div className="border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden">
+      <div className="border border-primary/20 flex flex-col lg:flex-row w-full max-w-6xl mx-auto bg-base-100 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm">
         {/* SIGNUP FORM - LEFT SIDE */}
-        <div className="w-full lg:w-1/2 p-4 sm:p-8 flex flex-col">
+        <div className="w-full lg:w-1/2 p-6 sm:p-10 flex flex-col">
           {/* LOGO */}
-          <div className="mb-4 flex items-center justify-start gap-2">
-            <ShipWheelIcon className="size-9 text-primary" />
-            <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
-              Streamify
+          <div className="mb-8 flex items-center justify-start gap-3">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-75"></div>
+              <div className="relative bg-base-100 rounded-lg p-2">
+                <Globe className="size-8 text-primary" />
+              </div>
+            </div>
+            <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary tracking-wide">
+              MultiLingo
             </span>
           </div>
 
@@ -59,7 +64,7 @@ const SignUpPage = () => {
                 <div>
                   <h2 className="text-xl font-semibold">Create an Account</h2>
                   <p className="text-sm opacity-70">
-                    Join Streamify and start your language learning adventure!
+                    Join MultiLingo and start your language learning adventure!
                   </p>
                 </div>
 
@@ -147,16 +152,16 @@ const SignUpPage = () => {
         </div>
 
         {/* SIGNUP FORM - RIGHT SIDE */}
-        <div className="hidden lg:flex w-full lg:w-1/2 bg-primary/10 items-center justify-center">
-          <div className="max-w-md p-8">
-            {/* Illustration */}
+        <div className="hidden lg:flex w-full lg:w-1/2 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/5 items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-gradient-to-t from-transparent via-transparent to-primary/20"></div>
+          <div className="max-w-md p-8 relative z-10">
             <div className="relative aspect-square max-w-sm mx-auto">
               <img src="/i.png" alt="Language connection illustration" className="w-full h-full" />
             </div>
 
-            <div className="text-center space-y-3 mt-6">
-              <h2 className="text-xl font-semibold">Connect with language partners worldwide</h2>
-              <p className="opacity-70">
+            <div className="text-center space-y-3 mt-8">
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Connect with language partners worldwide</h2>
+              <p className="opacity-70 text-base">
                 Practice conversations, make friends, and improve your language skills together
               </p>
             </div>

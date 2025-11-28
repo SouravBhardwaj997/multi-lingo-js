@@ -49,11 +49,14 @@ const HomePage = () => {
   }, [outgoingFriendReqs]);
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
+    <div className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-base-100 via-base-100 to-base-200 min-h-screen">
       <div className="container mx-auto space-y-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Your Friends</h2>
-          <Link to="/notifications" className="btn btn-outline btn-sm">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Your Friends</h2>
+            <p className="text-sm opacity-70 mt-1">Connect and learn with your language partners</p>
+          </div>
+          <Link to="/notifications" className="btn btn-primary btn-sm shadow-md hover:shadow-lg transition-all">
             <UsersIcon className="mr-2 size-4" />
             Friend Requests
           </Link>
@@ -74,11 +77,11 @@ const HomePage = () => {
         )}
 
         <section>
-          <div className="mb-6 sm:mb-8">
+          <div className="mb-8 sm:mb-10">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Meet New Learners</h2>
-                <p className="opacity-70">
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Meet New Learners</h2>
+                <p className="opacity-70 text-base mt-2">
                   Discover perfect language exchange partners based on your profile
                 </p>
               </div>
@@ -104,7 +107,7 @@ const HomePage = () => {
                 return (
                   <div
                     key={user._id}
-                    className="card bg-base-200 hover:shadow-lg transition-all duration-300"
+                    className="card bg-gradient-to-br from-base-100 to-base-200 hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300/50 overflow-hidden"
                   >
                     <div className="card-body p-5 space-y-4">
                       <div className="flex items-center gap-3">

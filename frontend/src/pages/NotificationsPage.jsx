@@ -23,9 +23,12 @@ const NotificationsPage = () => {
   const acceptedRequests = friendRequests?.acceptedReqs || [];
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
+    <div className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-base-100 via-base-100 to-base-200 min-h-screen">
       <div className="container mx-auto max-w-4xl space-y-8">
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Notifications</h1>
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Notifications</h1>
+          <p className="text-sm opacity-70">Manage your friend requests and new connections</p>
+        </div>
 
         {isLoading ? (
           <div className="flex justify-center py-12">
@@ -35,17 +38,19 @@ const NotificationsPage = () => {
           <>
             {incomingRequests.length > 0 && (
               <section className="space-y-4">
-                <h2 className="text-xl font-semibold flex items-center gap-2">
-                  <UserCheckIcon className="h-5 w-5 text-primary" />
+                <h2 className="text-2xl font-bold flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/20">
+                    <UserCheckIcon className="h-6 w-6 text-primary" />
+                  </div>
                   Friend Requests
-                  <span className="badge badge-primary ml-2">{incomingRequests.length}</span>
+                  <span className="badge badge-primary badge-lg">{incomingRequests.length}</span>
                 </h2>
 
                 <div className="space-y-3">
                   {incomingRequests.map((request) => (
                     <div
                       key={request._id}
-                      className="card bg-base-200 shadow-sm hover:shadow-md transition-shadow"
+                      className="card bg-gradient-to-br from-base-100 to-base-200 shadow-md hover:shadow-lg transition-all border border-base-300/50 hover:border-primary/50"
                     >
                       <div className="card-body p-4">
                         <div className="flex items-center justify-between">
@@ -84,14 +89,16 @@ const NotificationsPage = () => {
             {/* ACCEPTED REQS NOTIFICATONS */}
             {acceptedRequests.length > 0 && (
               <section className="space-y-4">
-                <h2 className="text-xl font-semibold flex items-center gap-2">
-                  <BellIcon className="h-5 w-5 text-success" />
+                <h2 className="text-2xl font-bold flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-success/20">
+                    <BellIcon className="h-6 w-6 text-success" />
+                  </div>
                   New Connections
                 </h2>
 
                 <div className="space-y-3">
                   {acceptedRequests.map((notification) => (
-                    <div key={notification._id} className="card bg-base-200 shadow-sm">
+                    <div key={notification._id} className="card bg-gradient-to-br from-base-100 to-base-200 shadow-md hover:shadow-lg transition-all border border-base-300/50 hover:border-success/50">
                       <div className="card-body p-4">
                         <div className="flex items-start gap-3">
                           <div className="avatar mt-1 size-10 rounded-full">
