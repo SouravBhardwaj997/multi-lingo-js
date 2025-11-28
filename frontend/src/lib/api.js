@@ -2,6 +2,7 @@ import { axiosInstance } from "./axios";
 
 export const signup = async (signupData) => {
   const response = await axiosInstance.post("/auth/signup", signupData);
+  console.log(response);
   return response.data;
 };
 
@@ -55,7 +56,9 @@ export async function getFriendRequests() {
 }
 
 export async function acceptFriendRequest(requestId) {
-  const response = await axiosInstance.put(`/users/friend-request/${requestId}/accept`);
+  const response = await axiosInstance.put(
+    `/users/friend-request/${requestId}/accept`
+  );
   return response.data;
 }
 
